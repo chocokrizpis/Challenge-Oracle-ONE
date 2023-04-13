@@ -198,7 +198,6 @@ button.rgba {
   margin-top: 10px;
   opacity: 0.6;
 }
-
 @media (max-width: 1024px) {
   .container .container-col .item.result .content {
     padding: 35px 0px;
