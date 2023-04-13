@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es_MX">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Encriptador de texto</title>
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- FUENTE DE GOOGLE FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="container-col">
+			<div class="logo">
+				<img src="img/vector.svg">
+			</div>
+
+			<div class="item form">
+				<div class="texto">
+					<textarea id="formulario" placeholder="Ingrese el texto aqui." autofocus></textarea>
+				</div>
+
+				<div class="content">
+					<div class="info">
+						<img src="img/alert.svg">
+						<p>Solo se permiten letras minúsculas.</p>
+					</div>
+
+					<div class="btns">
+						<button class="blue" id="encriptar">Encriptar</button>
+						<button class="rgba" id="descifrar">Desencriptar</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="item result" id="resultado">
+				<div class="content">
+					<div class="thumb">
+						<img src="img/persona.svg">
+					</div>
+
+					<div class="texto">
+						<h3>Ningún mensaje fue encontrado</h3>
+						<p>Ingresa el texto que deseas encriptar o desencriptar.</p>
+					</div>
+				</div>
+
+				<div class="resultado">
+					<div class="texto">
+						<p>Hola mundo este es el resultado del encriptado.</p>
+					</div>
+
+					<div class="btn">
+						<button class="blue" id="copiar">Copiar texto</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<p>&copy; Axel Osvaldo. 2023.</p>
+
+		<ul class="link">
+			<li><a href="https://github.com/chocokrizpis" target="_blank">Github</a></li>
+			<li><a href="https://app.aluracursos.com/user/chocokrizpis" target="_blank">Alura Latam</a></li>
+		</ul>
+	</footer>
+</body>
+</html>
