@@ -36,7 +36,7 @@ texto.addEventListener('input', function(){
             contenedor.classList.remove('rotate');
 
             encBtn.onclick = null;
-            desBtn.onclick = descifrar;
+            desBtn.onclick = null;
         }
 
         // FUNCIONES PARA TRANSFORMAR LOS TEXTOS
@@ -69,4 +69,19 @@ texto.addEventListener('input', function(){
             return cadena.split('').map( letra => acentos[letra] || letra).join('').toString(); 
         }
     }
+});
+
+
+// Funcion para copiar el texto del contenedor
+let botonCopiar = document.getElementById('copiar');
+
+botonCopiar.addEventListener('click', function(){
+    navigator.clipboard.writeText(respuesta.innerHTML);
+
+    let alertaCopiado = document.getElementById('mensajeCopiado');
+    alertaCopiado.classList.add('show');
+
+    setTimeout(function(){
+        alertaCopiado.classList.remove('show');
+    }, 2500);
 });

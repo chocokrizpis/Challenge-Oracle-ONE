@@ -15,55 +15,59 @@
 <body>
 	<div class="container">
 		<div class="container-col">
-			<div class="logo">
-				<img src="img/vector.svg">
-			</div>
-
-			<div class="item form">
-				<div class="texto">
-					<textarea id="textarea" placeholder="Ingresa el texto aqui." autofocus></textarea>
-				</div>
-
-				<div class="content">
-					<div class="info">
-						<img src="img/alert.svg">
-						<p>Solo se permiten letras minúsculas.</p>
-					</div>
-
-					<div class="btns">
-						<button class="blue disabled" id="encriptarBtn">Encriptar</button>
-						<button class="rgba disabled" id="descifrarBtn">Desencriptar</button>
-					</div>
-				</div>
-			</div>
-
-			<div class="item result" id="resultadoContainer">
-				<div class="content">
-					<div class="thumb">
-						<img src="img/persona.svg">
+			<div class="container-content">
+				<div class="item form">
+					<div class="logo">
+						<img src="img/vector.svg">
 					</div>
 
 					<div class="texto">
-						<h3>Tu texto encriptado se mostrara aquí</h3>
-						<p>Ingresa el texto que deseas encriptar o desencriptar.</p>
+						<textarea id="textarea" placeholder="Ingresa el texto aqui." autofocus></textarea>
+					</div>
+
+					<div class="content">
+						<div class="info">
+							<img src="img/alert.svg">
+							<p>Solo se permiten letras minúsculas.</p>
+						</div>
+
+						<div class="btns">
+							<button class="blue disabled" id="encriptarBtn">Encriptar</button>
+							<button class="rgba disabled" id="descifrarBtn">Desencriptar</button>
+						</div>
 					</div>
 				</div>
 
-				<div class="resultado">
-					<div class="texto">
-						<span>Tu texto encriptado:</span>
-						<p id="resultado"></p>
+				<div class="item result" id="resultadoContainer">
+					<div class="content">
+						<div class="thumb">
+							<img src="img/persona.svg">
+						</div>
+
+						<div class="texto">
+							<h3>Tu texto encriptado se mostrara aquí</h3>
+							<p>Ingresa el texto que deseas encriptar o desencriptar.</p>
+						</div>
 					</div>
 
-					<div class="btn">
-						<button class="blue" id="copiar">Copiar texto</button>
+					<div class="resultado">
+						<div class="texto">
+							<span>Tu texto encriptado:</span>
+							<p id="resultado"></p>
+						</div>
+
+						<div class="btn">
+							<button class="blue" id="copiar">Copiar texto</button>
+							<p class="copy" id="mensajeCopiado">¡Texto copiado correctamente!</p>
+						</div>
 					</div>
+				</div>
+
+				<!-- Mensaje de error -->
+				<div class="error" id="error">
+					<p>No se permiten letras mayúsculas</p>
 				</div>
 			</div>
-		</div>
-
-		<div class="error" id="error">
-			<p>No se permiten letras mayúsculas</p>
 		</div>
 	</div>
 

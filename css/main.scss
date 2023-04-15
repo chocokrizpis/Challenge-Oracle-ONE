@@ -36,6 +36,14 @@ body{
 	color: #181818;
 }
 
+a, button, input{
+	outline: none;
+}
+
+h1, h2, h3, p{
+	letter-spacing: -0.12px;
+}
+
 button{
 	min-width: 200px;
 	padding: 14px 20px;
@@ -73,38 +81,40 @@ button{
 
 .container{
 	width: 100%;
-	height: 100vh;
-	padding: 50px;
+	height: 100%;
 	box-sizing: border-box;
-	background: #DADFE7;
-	z-index: 100;
-
-	position: relative;
-	overflow: hidden;
-	margin-bottom: 60px;
-
-	@include tablet{
-		padding: 40px;
-	}
-
-	@include mobile{
-		padding: 20px;
-		margin-bottom: 56.67px;
-	}
 
 	.container-col{
 		width: 100%;
 		height: 100%;
-		position: relative;
 
-		display: grid;
-		grid-template-columns: 1fr 420px;
-		grid-gap: 0px;
+		.container-content{
+			width: 100%;
+			min-height: 100vh;
+			padding: 50px;
+			margin-bottom: 60px;
 
-		@include tablet{
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
+			z-index: 100;
+			background: #DADFE7;
+
+			display: grid;
+			grid-template-columns: 1fr 420px;
+			grid-gap: 0px;
+
+			overflow: hidden;
+			position: relative;
+
+			@include tablet{
+				padding: 20px;
+				grid-template-columns: unset;
+				grid-template-rows: 1fr auto;
+				margin-bottom: 58px;
+			}
+
+			@include mobile{
+				padding: 15px;
+				margin-bottom: 56.67px;
+			}
 		}
 
 		.logo{
@@ -134,6 +144,7 @@ button{
 				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
+				position: relative;
 
 				.texto{
 					width: 90%;
@@ -143,7 +154,8 @@ button{
 
 					textarea{
 						width: 100%;
-						min-height: 100%;
+						height: 100%;
+						min-height: 250px;
 						border: unset;
 						background: transparent;
 						outline: none;
@@ -308,8 +320,13 @@ button{
 					justify-content: space-between;
 					flex-direction: column;
 
+					@include mobile{
+						padding: 15px;
+					}
+
 					.texto{
 						width: 100%;
+						height: auto;
 						padding-bottom: 20px;
 
 						span{
@@ -321,8 +338,9 @@ button{
 
 						p{
 							font-weight: 500;
-							font-size: 1.4rem;
+							font-size: 1.2rem;
 							line-height: 1.85rem;
+							box-sizing: border-box;
 						}
 					}
 
@@ -333,6 +351,31 @@ button{
 
 						button{
 							width: 100%;
+						}
+
+						.copy{
+							color: green;
+							margin-top: 10px;
+							font-size: 0.85rem;
+							font-weight: 500;
+							text-align: center;
+							display: none;
+
+							&.show{
+								display: block;
+								animation-name: alerta;
+								animation-duration: 3s;
+
+								@keyframes alerta{
+									from{
+										display: block;
+									}
+
+									to{
+										display: none;
+									}
+								}
+							}
 						}
 					}
 				}
