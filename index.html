@@ -4,7 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Encriptador de texto</title>
-	<link rel="stylesheet" href="css/style.css?v1.1">
+	<link rel="stylesheet" href="css/style.css?v1.2">
+	<link rel="shortcut icon" href="img/vector.svg" type="image/x-icon">
 
 	<!-- FUENTE DE GOOGLE FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +21,7 @@
 
 			<div class="item form">
 				<div class="texto">
-					<textarea id="formulario" placeholder="Ingrese el texto aqui." autofocus></textarea>
+					<textarea id="textarea" placeholder="Ingresa el texto aqui." autofocus></textarea>
 				</div>
 
 				<div class="content">
@@ -30,27 +31,28 @@
 					</div>
 
 					<div class="btns">
-						<button class="blue" id="encriptar">Encriptar</button>
-						<button class="rgba" id="descifrar">Desencriptar</button>
+						<button class="blue disabled" id="encriptarBtn">Encriptar</button>
+						<button class="rgba disabled" id="descifrarBtn">Desencriptar</button>
 					</div>
 				</div>
 			</div>
 
-			<div class="item result" id="resultado">
+			<div class="item result" id="resultadoContainer">
 				<div class="content">
 					<div class="thumb">
 						<img src="img/persona.svg">
 					</div>
 
 					<div class="texto">
-						<h3>Ningún mensaje fue encontrado</h3>
+						<h3>Tu texto encriptado se mostrara aquí</h3>
 						<p>Ingresa el texto que deseas encriptar o desencriptar.</p>
 					</div>
 				</div>
 
 				<div class="resultado">
 					<div class="texto">
-						<p>Hola mundo este es el resultado del encriptado.</p>
+						<span>Tu texto encriptado:</span>
+						<p id="resultado"></p>
 					</div>
 
 					<div class="btn">
@@ -59,15 +61,21 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="error" id="error">
+			<p>No se permiten letras mayúsculas</p>
+		</div>
 	</div>
 
 	<footer>
-		<p>&copy; 2023 Axel Osvaldo.</p>
+		<p>Por <strong><a href="https://www.instagram.com/dogoconpapas/" target="_blank">Axel Osvaldo</a></strong>.</p>
 
 		<ul class="link">
 			<li><a href="https://github.com/chocokrizpis" target="_blank">Github</a></li>
 			<li><a href="https://app.aluracursos.com/user/chocokrizpis" target="_blank">Alura Latam</a></li>
 		</ul>
 	</footer>
+
+	<script src="script/main.js?v1.0"></script>
 </body>
 </html>

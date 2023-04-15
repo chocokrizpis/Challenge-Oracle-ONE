@@ -21,15 +21,54 @@ $fuente: 'Inter', sans-serif;
 html{
 	font-size: 16px;
 
-	@include mobile{
+	@include tablet{
 		font-size: 15px;
+	}
+
+	@include mobile{
+		font-size: 14px;
 	}
 }
 
 body{
 	font-family: $fuente;
-	background: rgba($color,.15);
+	background: #DADFE7;
 	color: #181818;
+}
+
+button{
+	min-width: 200px;
+	padding: 14px 20px;
+	border-radius: 50px;
+	border: 2px solid transparent;
+	cursor: pointer;
+
+	font-size: 1.03rem;
+	font-family: $fuente;
+	font-weight: 500;
+	margin-right: 12px;
+	transition: 200ms ease-out;
+
+	&:hover{
+		opacity: 0.75;
+	}
+
+	&.blue{
+		background: $color;
+		color: white;
+	}
+
+	&.rgba{
+		background: rgba($color,.20);
+	}
+
+	// ESTILOS PARA DESACTIVAR EL BOTON
+	&.disabled{
+		opacity: 0.30;
+		background: grey;
+		color: black;
+		cursor: initial;
+	}
 }
 
 .container{
@@ -37,6 +76,12 @@ body{
 	height: 100vh;
 	padding: 50px;
 	box-sizing: border-box;
+	background: #DADFE7;
+	z-index: 100;
+
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 60px;
 
 	@include tablet{
 		padding: 40px;
@@ -44,6 +89,7 @@ body{
 
 	@include mobile{
 		padding: 20px;
+		margin-bottom: 56.67px;
 	}
 
 	.container-col{
@@ -52,7 +98,7 @@ body{
 		position: relative;
 
 		display: grid;
-		grid-template-columns: 1fr 370px;
+		grid-template-columns: 1fr 420px;
 		grid-gap: 0px;
 
 		@include tablet{
@@ -65,12 +111,12 @@ body{
 			position: absolute;
 			top: 0; left: 0;
 
-			width: 40px;
-			height: 40px;
+			width: 35px;
+			height: 35px;
 
 			@include tablet{
-				width: 35px;
-				height: 35px;
+				width: 30px;
+				height: 30px;
 			}
 
 			img{
@@ -91,18 +137,21 @@ body{
 
 				.texto{
 					width: 90%;
+					height: 100%;
 					margin-top: 100px;
+					margin-bottom: 25px;
 
 					textarea{
 						width: 100%;
-						min-height: 250px;
+						min-height: 100%;
 						border: unset;
 						background: transparent;
 						outline: none;
 						resize: none;
+						cursor: pointer;
 
 						font-family: $fuente;
-						font-weight: 400;
+						font-weight: 500;
 						font-size: 2rem;
 
 						&::placeholder{
@@ -143,37 +192,21 @@ body{
 				}
 
 				.btns{
-					button{
-						min-width: 200px;
-						padding: 14px 20px;
-						border-radius: 50px;
-						border: 2px solid transparent;
-						cursor: pointer;
-
-						font-size: 1.03rem;
-						font-family: $fuente;
-						font-weight: 500;
-						margin-right: 12px;
-						transition: 200ms ease-out;
-
-						&:hover{
-							opacity: 0.75;
-						}
-
-						&.blue{
-							background: $color;
-							color: white;
-						}
-
-						&.rgba{
-							background: rgba($color,.20);
-						}
-					}
-
 					@include tablet{
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						grid-gap: 15px;
+
 						button{
 							width: 100%;
 							margin-right: 0px;
+						}
+					}
+
+					@include mobile{
+						display: block;
+
+						button{
 							margin-top: 15px;
 						}
 					}
@@ -184,25 +217,71 @@ body{
 				height: auto;
 				background: white;
 				border-radius: 20px;
+				box-shadow: 0px 4px 10px rgba(black,.03);
 
 				display: flex;
 				justify-content: center;
 				align-items: center;
 
+				position: relative;
+				transition: 520ms ease-out;
+
 				@include tablet{
 					margin-top: 35px;
+				}
+
+				.item-content{
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					top: 0; left: 0;
+
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				// AQUI HACEMOS LA ANIMACION DE ROTAR EL CONTENEDOR
+				&.rotate{
+					transform: rotateY(360deg);
+					transform-style: preserve-3d;
+
+					.content{
+						display: none;
+					}
+
+					.resultado{
+						display: flex;
+					}
 				}
 
 				.content{
 					width: 80%;
 					height: auto;
 					text-align: center;
+					display: block;
+
+					.thumb{
+						width: 250px;
+						height: 250px;
+						margin: auto;
+
+						@include tablet{
+							display: none;
+						}
+
+						img{
+							width: 100%;
+							height: 100%;
+							object-fit: cover;
+						}
+					}
 
 					.texto{
 						margin-top: 40px;
 
 						h3{
-							font-size: 1.5rem;
+							font-size: 1.7rem;
 						}
 
 						p{
@@ -220,20 +299,111 @@ body{
 					}
 				}
 
-				.thumb{
-					width: 250px;
-					height: 250px;
-					margin: auto;
+				.resultado{
+					width: 100%;
+					height: 100%;
+					padding: 25px;
 
-					@include tablet{
-						display: none;
-					}
+					display: none;
+					justify-content: space-between;
+					flex-direction: column;
 
-					img{
+					.texto{
 						width: 100%;
-						height: 100%;
-						object-fit: cover;
+						padding-bottom: 20px;
+
+						span{
+							color: $color;
+							opacity: 0.70;
+							margin-bottom: 10px;
+							display: block;
+						}
+
+						p{
+							font-weight: 500;
+							font-size: 1.4rem;
+							line-height: 1.85rem;
+						}
 					}
+
+					.btn{
+						width: 100%;
+						padding-top: 25px;
+						border-top: 1px solid rgba(black,.20);
+
+						button{
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.error{
+	width: 100%;
+	max-width: 300px;
+	padding: 13px 20px;
+	background: red;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px rgba(black,.10);
+	color: white;
+
+	position: absolute;
+	bottom: 15px; left: 0; right: 0;
+	margin: auto;
+	text-align: center;
+
+	transition: 200ms ease-out;
+	transform: translateY(100%);
+	visibility: hidden;
+
+	@include tablet{
+		max-width: unset;
+		border-radius: unset;
+		bottom: 0;
+	}
+
+	&.show{
+		transform: translateY(0%);
+		visibility: visible;
+	}
+}
+
+footer{
+	width: 100%;
+	padding: 20px 50px;
+	position: fixed;
+	bottom: 0; left: 0;
+	background: $color;
+	color: white;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include tablet{
+		padding: 20px;
+	}
+
+	p{
+		a{
+			color: unset;
+		}
+	}
+
+	.link{
+		li{
+			list-style: none;
+			display: inline-block;
+
+			a{
+				color: unset;
+				margin-left: 12px;
+
+				&:hover{
+					text-decoration: underline;
 				}
 			}
 		}
