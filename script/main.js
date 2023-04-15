@@ -42,9 +42,9 @@ texto.addEventListener('input', function(){
         // FUNCIONES PARA TRANSFORMAR LOS TEXTOS
         function cifrar(){
             let texto = quitarAcentos(obtenerTexto)
-            .replace(/a/g, "ai")
             .replace(/e/g, "enter")
             .replace(/i/g, "imes")
+            .replace(/a/g, "ai")
             .replace(/o/g, "ober")
             .replace(/u/g, "ufat");
 
@@ -54,9 +54,9 @@ texto.addEventListener('input', function(){
 
         function descifrar(){
             let texto = quitarAcentos(obtenerTexto)
-            .replace(/ai/g, "a")
             .replace(/enter/g, "e")
             .replace(/imes/g, "i")
+            .replace(/ai/g, "a")
             .replace(/ober/g, "o")
             .replace(/ufat/g, "u");
 

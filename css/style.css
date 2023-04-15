@@ -74,9 +74,6 @@ button.disabled {
   width: 100%;
   min-height: 100vh;
   padding: 50px;
-  margin-bottom: 60px;
-  z-index: 100;
-  background: #DADFE7;
   display: grid;
   grid-template-columns: 1fr 420px;
   grid-gap: 0px;
@@ -88,13 +85,11 @@ button.disabled {
     padding: 20px;
     grid-template-columns: unset;
     grid-template-rows: 1fr auto;
-    margin-bottom: 58px;
   }
 }
 @media (max-width: 480px) {
   .container .container-col .container-content {
     padding: 15px;
-    margin-bottom: 56.67px;
   }
 }
 .container .container-col .logo {
@@ -361,9 +356,6 @@ button.disabled {
 footer {
   width: 100%;
   padding: 20px 50px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background: #072B61;
   color: white;
   display: flex;

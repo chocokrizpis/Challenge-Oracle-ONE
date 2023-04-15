@@ -92,10 +92,6 @@ button{
 			width: 100%;
 			min-height: 100vh;
 			padding: 50px;
-			margin-bottom: 60px;
-
-			z-index: 100;
-			background: #DADFE7;
 
 			display: grid;
 			grid-template-columns: 1fr 420px;
@@ -108,12 +104,10 @@ button{
 				padding: 20px;
 				grid-template-columns: unset;
 				grid-template-rows: 1fr auto;
-				margin-bottom: 58px;
 			}
 
 			@include mobile{
 				padding: 15px;
-				margin-bottom: 56.67px;
 			}
 		}
 
@@ -417,8 +411,6 @@ button{
 footer{
 	width: 100%;
 	padding: 20px 50px;
-	position: fixed;
-	bottom: 0; left: 0;
 	background: $color;
 	color: white;
 
